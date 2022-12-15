@@ -850,6 +850,11 @@
             var medical_life = "{{ isset($details->medical_category)?$details->medical_category:'off' }}";
             var emergency_leave = "{{ isset($details->type_of_leaving)?$details->type_of_leaving:'off' }}";
 
+            var teacher_list = "{{ isset($teacher_list)?'on':'off' }}";
+            console.log("teacher_list", teacher_list);
+            var admin_list = "{{ isset($admin_list)?'on':'off' }}";
+            console.log("admin_list", admin_list);
+
         </script>
 
     </div>
