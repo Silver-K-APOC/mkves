@@ -311,7 +311,7 @@ class UserController extends Controller
                 $passport_copy_front = $req->file('passport_copy_front');
                 $f = Qs::getFileMetaData($passport_copy_front);
                 $f['name'] = 'passport_copy_front.' . $f['ext'];
-                $f['path'] = $passport_copy_front->storeAs(Qs::getUploadPath($user_type).$data['code'], $f['name']);
+                $f['path'] = $passport_copy_front->storeAs(Qs::getUploadPath($user_type).$user->code, $f['name']);
                 $passport_copy_front = asset('storage/' . $f['path']);
             }
 
@@ -319,7 +319,7 @@ class UserController extends Controller
                 $passport_copy_back = $req->file('passport_copy_back');
                 $f = Qs::getFileMetaData($passport_copy_back);
                 $f['name'] = 'passport_copy_back.' . $f['ext'];
-                $f['path'] = $passport_copy_back->storeAs(Qs::getUploadPath($user_type).$data['code'], $f['name']);
+                $f['path'] = $passport_copy_back->storeAs(Qs::getUploadPath($user_type).$user->code, $f['name']);
                 $passport_copy_back = asset('storage/' . $f['path']);
             }
 
